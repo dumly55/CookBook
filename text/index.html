@@ -13,15 +13,51 @@
         <h2>Recipes</h2>
         <ul>
             <li><a href="../food/steak.html">New York Strip Steak</a></li>
-            <li><a href="#">Cheese Pasta</a></li>
+            <li class="dropdown">
+                <span class="dropdown-toggle">Pastas</span>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Chicken Alfredo</a></li>
+                    <li class="dropdown">
+                        <div class="dropdown-item-with-toggle">
+                            <a href="#" class="dropdown-link">Pesto Pasta with Chicken</a>
+                            <span class="dropdown-toggle">▼</span>
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Homemade Pesto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
             <li><a href="#">Macarons</a></li>
             <li><a href="#">Brownies (including a protein version)</a></li>
             <li><a href="#">Chicken Katsu</a></li>
             <li><a href="../food/seafood_boil.html">Seafood Boil</a></li>
             <li><a href="#">Rice and Ground Beef</a></li>
             <li><a href="#">Chicken Thighs</a></li>
-
         </ul>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const dropdown = this.parentElement.classList.contains('dropdown') ? 
+                                   this.parentElement : 
+                                   this.parentElement.parentElement;
+                    const menu = dropdown.querySelector('.dropdown-menu');
+                    
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                        this.textContent = this.textContent.replace('▲', '▼');
+                    } else {
+                        menu.style.display = 'block';
+                        this.textContent = this.textContent.replace('▼', '▲');
+                    }
+                });
+            });
+        });
+    </script>
   </body>
 </html>

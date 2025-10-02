@@ -164,3 +164,55 @@ nav a:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    color: #666;
+    font-weight: 600;
+    padding: 5px 0;
+    display: inline-block;
+}
+
+.dropdown-toggle:hover {
+    color: #333;
+}
+
+.dropdown-menu {
+    display: none;
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+}
+
+.dropdown-menu li {
+    margin-bottom: 5px;
+}
+
+.dropdown-item-with-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.dropdown-link {
+    flex-grow: 1;
+    color: #666;
+    text-decoration: none;
+}
+
+.dropdown-link:hover {
+    color: #333;
+}
+
+.dropdown-item-with-toggle .dropdown-toggle {
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
